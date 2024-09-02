@@ -1,0 +1,21 @@
+Egyéb/.idea/
+Egyéb/.venv/
+Pythonidomár/.idea/
+Pythonidomár/.venv/
+Sulipy/Honlapkészítés Python segítségével/.idea/
+Sulipy/Honlapkészítés Python segítségével/.venv/
+Sulipy/Projekt.Sulipy/.idea/
+Sulipy/Projekt.Sulipy/.venv/
+Sulipy/Python alapok/.idea/
+Sulipy/Python alapok/.venv/
+Tech Atival/Python megoldások/.idea/
+Tech Atival/Python megoldások/.venv/
+Tech Atival/Python önállóan futtatható programok/.idea/
+Tech Atival/Python önállóan futtatható programok/.venv/
+Yeastar_API/.idea/
+Yeastar_API/.venv/
+*.mp4
+*.json
+*.txt
+*.csv
+*.html

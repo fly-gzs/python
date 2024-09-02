@@ -1,0 +1,77 @@
+'''
+Torpedó játék egyszerűsített változata. A játéktér legyen egy 3x3-as négyzetalakú rács,
+amiben az oszlopokat betűk (A, B, C), a sorokat számok (1, 2, 3) jelölik.
+A program helyezzen el egy darab egy egység kiterjedésű hajót
+a játéktérben véletlenszerűen (Pl: B2).
+A játékos próbálja meg kitalálni a hajó pozícióját újabb és újabb tippek megadásával.
+A játék végén a program azt is írja ki a képernyőre,
+hogy hány próbálkozásból tudta a játékos kitalálni a pozíciót!
+'''
+import random
+jatekter1 = [1,4,9,2,8,18,3,12,27]
+hajo = random.choice(jatekter1)
+szam = hajo
+if hajo == 1:
+    print('A hajó helyzete: A1')
+    hajo = 'A1'
+if hajo == 4:
+    print('A hajó helyzete: A2')
+    hajo = 'A2'
+if hajo == 9:
+    print('A hajó helyzete: A3')
+    hajo = 'A3'
+if hajo == 2:
+    print('A hajó helyzete: B1')
+    hajo = 'B1'
+if hajo == 8:
+    print('A hajó helyzete: B2')
+    hajo = 'B2'
+if hajo == 18:
+    print('A hajó helyzete: B3')
+    hajo = 'B3'
+if hajo == 3:
+    print('A hajó helyzete: C1')
+    hajo = 'C1'
+if hajo == 12:
+    print('A hajó helyzete: C2')
+    hajo = 'C2'
+if hajo == 27:
+    print('A hajó helyzete: C3')
+    hajo = 'C3'
+
+sor = 1
+while sor <=3:
+    oszlop = 1
+    while oszlop <= 3:
+#         print(f'({sor*sor*oszlop}) ', end='')
+        if sor*sor*oszlop == szam:
+            print('X ' , end='')
+        else:
+            print('O ', end='')
+        oszlop += 1
+    print('')
+    sor += 1
+
+jatekter = ['A1','A2','A3','B1','B2','B3','C1','C2','C3']
+rossz_tipp_lista = []
+ervenytelen_tipp_lista = []
+helyes_tipp_lista = []
+tipp_szam = 0
+while tipp_szam < len(jatekter):
+    tipp = input('Tippelj egyet: ')
+    if not tipp in jatekter:
+        print('Hiba! Ez a mező nem létezik a játéktérben!')
+        ervenytelen_tipp_lista.append(tipp)
+    elif tipp == hajo:
+        print('Talált, süllyedt!')
+        helyes_tipp_lista.append(tipp)
+        break
+    else:
+        print('Nem talált!')
+        rossz_tipp_lista.append(tipp)
+    tipp_szam += 1
+print('A találat helye: ', ('').join(helyes_tipp_lista))    
+print('Rossz tippek: ', (', ').join(rossz_tipp_lista))
+print('Érvénytelen tippek: ', (', ').join(ervenytelen_tipp_lista))
+db = len(helyes_tipp_lista) + len(rossz_tipp_lista) + len(ervenytelen_tipp_lista)
+print('Összesen ' + str(db) + ' db kisérleted volt.')
